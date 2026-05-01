@@ -4,21 +4,21 @@
 
 @font-face {
   font-family: "Arista Pro Alternate";
-  src: url("/fonts/Arista-Pro-Alternate-Regular-trial.ttf") format("truetype");
+  src: url("./assets/fonts/Arista-Pro-Alternate-Regular-trial.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Arista Pro Alternate";
-  src: url("/fonts/Arista-Pro-Alternate-Bold-trial.ttf") format("truetype");
+  src: url("./assets/fonts/Arista-Pro-Alternate-Bold-trial.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Arista Pro Alternate";
-  src: url("/fonts/Arista-Pro-Alternate-Bold-trial.ttf") format("truetype");
+  src: url("./assets/fonts/Arista-Pro-Alternate-Bold-trial.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
 }
