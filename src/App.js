@@ -1,6 +1,7 @@
 import "./App.css";
 import Hero from "./components/Hero";
 import RegistrationForm from "./components/RegistrationForm";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -89,6 +90,7 @@ function App() {
         </div>
       </section>
       <RegistrationForm />
+      <Footer />
     </>
   );
 }
