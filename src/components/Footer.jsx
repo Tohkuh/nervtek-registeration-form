@@ -41,7 +41,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Nervtek. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Nervtek Bamenda Community. All rights reserved.</p>
           <div className="footer-social">
             {/* Social icons could go here */}
           </div>

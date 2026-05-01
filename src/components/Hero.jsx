@@ -6,6 +6,9 @@ export default function Hero() {
       {/* Floating accent shapes for visual depth */}
       <div className="hero-shape hero-shape--1" aria-hidden="true" />
       <div className="hero-shape hero-shape--2" aria-hidden="true" />
+      <div className="hero-shape hero-shape--3" aria-hidden="true" />
+      <div className="hero-shape hero-shape--4" aria-hidden="true" />
+      <div className="hero-shape hero-shape--5" aria-hidden="true" />
 
       <nav className="site-nav" aria-label="Main navigation">
         <div className="nav-container">
@@ -25,19 +28,21 @@ export default function Hero() {
         </div>
       </nav>
 
-      <div className="hero-inner" id="top">
+      <div className="hero-inner">
         <div className="hero-content">
-          <span className="eyebrow">
-            <span className="eyebrow-dot" aria-hidden="true" />
-            First Meetup &middot; Human factor in tech
-          </span>
+          <div className="eyebrow" aria-label="Event status">
+            <span className="eyebrow-dot" />
+            FIRST MEETUP · BAMENDA
+          </div>
+          <span className="section-kicker">Nervtek Bamenda Community Launch</span>
           <h1>
-            The future of <span className="text-gradient">Bamenda</span> tech.
+            CREATING A TECH ECOSYSTEM <br />
+            <span className="text-gradient">FOR INNOVATION</span>
           </h1>
           <p>
             Join young builders, creators, and technology enthusiasts for a
-            focused community meetup inspired by practical innovation, safety,
-            and smarter digital systems.
+            focused community meetup inspired by practical innovation,
+            safety, and smarter digital systems.
           </p>
 
           <div className="hero-actions">

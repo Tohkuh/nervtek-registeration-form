@@ -133,7 +133,7 @@
   height: 420px;
   top: -120px;
   right: -80px;
-  background: rgba(0, 174, 239, 0.12);
+  background: rgba(0, 174, 239, 0.15);
   animation: floatSlow 12s ease-in-out infinite;
 }
 
@@ -142,8 +142,35 @@
   height: 300px;
   bottom: -60px;
   left: -60px;
-  background: rgba(242, 107, 33, 0.08);
+  background: rgba(242, 107, 33, 0.1);
   animation: floatSlow 16s ease-in-out infinite reverse;
+}
+
+.hero-shape--3 {
+  width: 250px;
+  height: 250px;
+  top: 10%;
+  left: 30%;
+  background: rgba(70, 198, 109, 0.08);
+  animation: floatSlow 14s ease-in-out infinite;
+}
+
+.hero-shape--4 {
+  width: 180px;
+  height: 180px;
+  bottom: 20%;
+  right: 15%;
+  background: rgba(255, 193, 15, 0.08);
+  animation: floatSlow 10s ease-in-out infinite reverse;
+}
+
+.hero-shape--5 {
+  width: 350px;
+  height: 350px;
+  top: 40%;
+  right: -100px;
+  background: rgba(1, 27, 50, 0.05);
+  animation: floatSlow 18s ease-in-out infinite;
 }
 
 .hero-grid {
@@ -215,6 +242,12 @@
   text-transform: uppercase;
 }
 
+.hero .section-kicker {
+  color: var(--yellow);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
 .hero h1 {
   margin: 0 0 22px;
   font-family: var(--font-display);
@@ -227,6 +260,26 @@
 
 .text-gradient {
   color: var(--yellow);
+}
+
+.hero-subject-line {
+  display: inline-block;
+  margin-bottom: 24px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid var(--yellow);
+  color: var(--white);
+  font-size: clamp(16px, 2vw, 22px);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+.hero-subject-line strong {
+  color: var(--yellow);
+  font-size: 0.85em;
+  text-transform: uppercase;
+  margin-right: 8px;
 }
 
 .hero p {
@@ -341,6 +394,7 @@
 .button-primary:hover {
   background: var(--white);
   box-shadow: 0 14px 36px rgba(0, 63, 107, 0.28);
+  transform: translateY(-3px) scale(1.02);
 }
 
 .button-primary svg {
@@ -364,6 +418,18 @@
   background: rgba(255, 255, 255, 0.1);
 }
 
+.hero-actions .button-primary {
+  background: var(--green);
+  color: var(--white);
+  border: none;
+}
+
+.hero-actions .button-primary:hover {
+  background: #39a359; /* Slightly darker green */
+  box-shadow: 0 10px 32px rgba(70, 198, 109, 0.3);
+  transform: translateY(-3px) scale(1.02);
+}
+
 .button-dark {
   background: var(--blue-deep);
   color: var(--white);
@@ -371,8 +437,35 @@
 
 /* ── Event Details Section ── */
 .event-details {
+  position: relative;
+  overflow: hidden;
   padding: clamp(72px, 10vw, 120px) clamp(22px, 6vw, 86px);
   background: var(--paper);
+  scroll-margin-top: 80px;
+}
+
+.details-shape {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.04;
+}
+
+.details-shape--1 {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  left: -100px;
+  background: var(--blue-deep);
+}
+
+.details-shape--2 {
+  width: 200px;
+  height: 200px;
+  bottom: -50px;
+  right: -50px;
+  background: var(--orange);
 }
 
 .details-header {
@@ -384,6 +477,15 @@
 .details-header .section-kicker {
   color: var(--accent-dark);
   margin-bottom: 14px;
+}
+
+.details-intro {
+  margin: 0 auto;
+  max-width: 640px;
+  color: var(--text-muted);
+  font-size: clamp(15px, 1.6vw, 17px);
+  line-height: 1.7;
+  opacity: 0.85;
 }
 
 .event-details h2,
@@ -417,76 +519,114 @@
   color: var(--accent);
 }
 
-/* Body: text + grid side-by-side */
-.details-body {
+/* Logistics Ribbon: Horizontal row for core facts */
+.details-logistics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1320px;
+  margin: 0 auto 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.details-logistics article {
+  flex: 1;
+  min-width: 240px;
+  max-width: 300px;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: var(--white);
+}
+
+.details-logistics article:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.card--date { background: var(--yellow) !important; }
+.card--venue { background: var(--green) !important; }
+.card--keynotes { background: var(--orange) !important; }
+.card--workshops { background: var(--blue-deep) !important; }
+
+.details-logistics article strong {
+  display: block;
+  font-size: 16px;
+  color: var(--white);
+  margin: 2px 0;
+}
+
+.details-logistics article p {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.details-logistics .card-label {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.details-logistics .card-icon {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--white);
+}
+
+/* Features Grid: High-impact value cards */
+.details-features {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(40px, 6vw, 80px);
-  align-items: start;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
   max-width: 1320px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
-.details-text p {
-  max-width: 520px;
-  margin: 0 0 28px;
-  color: var(--text-muted);
-  font-size: 16px;
-  line-height: 1.75;
+.feature-card {
+  background: var(--white);
+  padding: 40px 32px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s ease;
 }
 
-/* Feature list with checkmarks */
-.feature-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.feature-card:hover {
+  border-color: var(--blue-deep);
+  box-shadow: 0 10px 40px rgba(0, 113, 188, 0.08);
 }
 
-.feature-list li {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--ink);
-}
-
-.feature-icon {
+.feature-card-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(0, 113, 188, 0.06);
+  color: var(--blue-deep);
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: rgba(0, 174, 239, 0.1);
-  color: var(--accent-dark);
-  flex-shrink: 0;
-  margin-top: 1px;
+  margin-bottom: 24px;
 }
 
-/* Info cards: 2x2 grid */
-.details-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+.feature-card h4 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: var(--blue-deep);
 }
 
-.details-grid article {
-  padding: 28px 24px;
-  background: #ffffff;
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  text-align: left;
-  box-shadow: 0 4px 16px rgba(1, 27, 50, 0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.details-grid article:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(3, 17, 30, 0.08);
+.feature-card p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
 }
 
 .card-icon {
@@ -496,9 +636,18 @@
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: rgba(0, 113, 188, 0.08);
-  color: var(--accent-dark);
   margin-bottom: 14px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.card--date .card-icon { background: rgba(255, 255, 255, 0.2); color: var(--white); }
+.card--venue .card-icon { background: rgba(255, 255, 255, 0.2); color: var(--white); }
+.card--keynotes .card-icon { background: rgba(255, 255, 255, 0.2); color: var(--white); }
+.card--workshops .card-icon { background: rgba(255, 255, 255, 0.2); color: var(--white); }
+
+.details-logistics article:hover .card-icon {
+  transform: scale(1.1);
 }
 
 .card-label {
@@ -543,6 +692,7 @@
   padding: clamp(72px, 10vw, 120px) clamp(22px, 6vw, 86px);
   background-color: #0071bc;
   color: var(--white);
+  scroll-margin-top: 80px;
 }
 
 .registration-grid {
@@ -743,7 +893,7 @@
   padding: 14px 28px;
   border: none;
   border-radius: 12px;
-  background: var(--ink);
+  background: var(--green);
   color: var(--white);
   font-size: 13px;
   font-weight: 800;
@@ -754,13 +904,13 @@
     transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
     box-shadow 0.25s ease,
     background 0.25s ease;
-  box-shadow: 0 6px 20px rgba(1, 27, 50, 0.2);
+  box-shadow: 0 6px 20px rgba(70, 198, 109, 0.2);
 }
 
 .button-submit:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 32px rgba(1, 27, 50, 0.3);
-  background: var(--accent);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 10px 32px rgba(70, 198, 109, 0.3);
+  background: #39a359;
 }
 
 .button-submit:active {
@@ -977,12 +1127,16 @@
     font-size: 11px;
   }
 
-  .details-body {
-    grid-template-columns: 1fr;
+  .details-logistics {
+    gap: 16px;
   }
 
-  .details-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .details-logistics article {
+    min-width: calc(50% - 16px);
+  }
+
+  .details-features {
+    grid-template-columns: 1fr 1fr;
   }
 
   .registration-inner {
@@ -1049,7 +1203,11 @@
     max-width: 240px;
   }
 
-  .details-grid {
+  .details-logistics article {
+    min-width: 100%;
+  }
+
+  .details-features {
     grid-template-columns: 1fr;
   }
 
